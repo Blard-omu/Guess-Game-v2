@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../css/guess.css" />
+    <title>Guess My Number!</title>
+  </head>
+  <body class="body">
+    <header>
+      <h1 id="display">Guess My Number!</h1>
+      <p class="between">(Between 1 and 5)</p>
+      <div class="number">?</div>
+    </header>
+
+    <main>
+      <section class="left">
+        <p class="message">Start guessing...</p>
+        <input  class="guess" placeholder="?" />
+        <p class="warning"></p>
+        <div class="btn-container">
+            <button class="btn check">submit!</button>
+            <button class="btn check2">Play again!</button>
+        </div>
+      </section>
+
+      <section class="right">
+        <p class="label-score">💯 Trials: <span class="trials">5</span></p>
+        <p class="label-highscore">
+          🥇 Highscore: <span class="highscore">0</span>
+        </p>
+      </section>
+      
+    </main>
+    <div class="footer">
+        <small>&copy <span style="color: goldenrod;">Blard-Games</span> All right reserved</small>
+      </div>
+    <script src="../scripts/guess.js"></script>
+  </body>
+</html>
