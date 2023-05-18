@@ -8,25 +8,39 @@
     <title>Guess My Number!</title>
   </head>
   <body class="body">
+    <button class="mute" id="mute-button">
+      <img src="../images/icons8-mute-48.png" alt="">
+      <img src="../images/icons8-volume-64.png" alt="">
+    </button>
     <header>
       <h1 id="display">Guess My Number!</h1>
-      <p class="between">(Between 1 and 5)</p>
+      <p class="between">Between 1 and 5</p>
       <div class="number">?</div>
+      <p class="label-score">Trials: <span class="trials">5</span></p>
     </header>
-
+    <!-- Audio -->
+    <audio id="correct-sound" src="../audios/mixkit-animated-small-group-applause-523.wav"></audio>
+    <audio id="wrong-sound" src="../audios/mixkit-wrong-answer-fail-notification-946.wav"></audio>
+    <audio id="gameover-sound" src="../audios/mixkit-sad-game-over-trombone-471.wav"></audio>
+    
     <main>
+      <p class="label-highscore-mobile">
+        🥇 Highscore: <span class="highscore">0</span>
+      </p>
       <section class="left">
         <p class="message">Start guessing...</p>
-        <input  class="guess" placeholder="?" />
+        <form action="" >
+        <input  class="guess" placeholder="?" /><br>
         <p class="warning"></p>
         <div class="btn-container">
             <button class="btn check">submit!</button>
-            <button class="btn check2">Play again!</button>
+            <button class="btn reset">Play again!</button>
         </div>
+      </form>
       </section>
 
       <section class="right">
-        <p class="label-score">💯 Trials: <span class="trials">5</span></p>
+        <!-- <p class="label-score">💯 Trials: <span class="trials">5</span></p> -->
         <p class="label-highscore">
           🥇 Highscore: <span class="highscore">0</span>
         </p>

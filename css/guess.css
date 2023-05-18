@@ -9,6 +9,7 @@
 }
 .correct{
     background-color: green;
+    background: url('../images/giphy.gif');
 }
 .fail{
     background-color: red;
@@ -22,6 +23,7 @@ body{
     box-sizing: border-box;
     color: #eee;
     font-size: 1rem;
+    position: relative;
 }
 header{
     display: flex;
@@ -32,12 +34,13 @@ header{
     border-bottom: 5px solid #eee;
 }
 main{
-    height: 65vh;
+    height: 45vh;
     color: #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-top: 1rem;
 }
 h1{
     font-size: 1.2rem;
@@ -54,8 +57,9 @@ h1{
     flex-direction: column;
 }
 .label-highscore{
-    margin-top: 1.5rem;
+    display: none;
 }
+
 .btn{
     width: 8rem;
     padding: 10px 15px;
@@ -63,10 +67,11 @@ h1{
     background-color: cadetblue;
     cursor: pointer;
     border: none;
+    color: #eee;
 }
-.again{
+/* .again{
     margin-top: 1rem;
-}
+} */
 .between{
     color: #cea337d5;
 }
@@ -82,6 +87,7 @@ h1{
 .guess{
     width: 10rem;
     padding: 1rem;
+    align-self: center;
     margin: 1rem 0;
     font-size: 2.5rem;
     background-color: #cea337d5;
@@ -94,7 +100,7 @@ h1{
 .warning{
     background-color: yellow;
     color: red;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
     font-size: .6rem;
     margin-bottom: 10px;
@@ -108,10 +114,35 @@ h1{
 small{
     font-size: 1rem;
     text-align: center;
+    font-family: 'Tahoma', sans-serif;
 }
 .btn-container{
+    width:100%;
     display: flex;
+    justify-content: space-around;
+    align-self: center;
 }
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mute{
+    position: absolute;
+    right: 0;
+    bottom: 2%;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.mute img:nth-child(1){
+    display: none;
+    }
+.mute img:nth-child(2){
+    width: 45px;
+    }
 
 @media (min-width: 650px){
     body{
@@ -122,6 +153,9 @@ small{
     }
     .left, .right{
         width: 50%;
+        height: 30vh;
+        border: 2px solid #baa16252;
+        justify-content: center;
     }
     main{
         width: 100%;
@@ -129,7 +163,45 @@ small{
         flex-direction: row;
         justify-content: space-between;
     }
+    .label-score{
+        border: 2px solid #cea33749;
+        padding: 10px;
+    }
     .label-highscore{
         margin-top: 1rem;
+        display: block;
+    }
+    .btn-container{
+        width: 50%;
+    }
+    .label-highscore-mobile{
+        display: none;
+    }
+    .mute{
+        bottom: 5%;
+        right: 3%;
+    }
+}
+
+/* Animations */
+.number{
+    animation: float 5s ease-in-out;
+    animation-iteration-count: 10;
+}
+@keyframes float {
+    0%{
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-15px);
+    }
+    50%{
+        transform: translateY(15px);
+    }
+    75%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0);
     }
 }
