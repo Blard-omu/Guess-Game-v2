@@ -48,11 +48,11 @@ const handleReset = () => {
     number.style.color = "#222"
     display.innerHTML = 'Guess My Number!';
     number.innerHTML = '?';
-    check.removeAttribute('disabled');
-    msg.innerHTML = '';
+    check.removeAttribute("disabled");
+    check.style.opacity = '1'
+    msg.innerHTML = "Start guessing..."
     body.classList.add('body');
     body.classList.remove('fail', 'correct');
-    window.location.reload();
   };
 
 
@@ -75,8 +75,6 @@ const toggleMute = () => {
     gameOverSound.muted = false;
     img1.style.display = 'none';
     img2.style.display = 'block';
-
-
   }
 };
   
@@ -84,55 +82,54 @@ const toggleMute = () => {
 
 // Game function
 const playGame = function(){
-    let randomNum = Math.ceil(Math.random() * 5);
-
-// For trials
-    trials.innerHTML--;
-    trials.innerHTML < 0 ? trials.innerHTML = 0 : trials.innerHTML
-
-// Conditional
-if (guess.value == null || guess.value < 1 || guess.value > 5 || guess.value == ""){
-    playWrongSound()
-    warning.style.display = "block";
-    warning.innerHTML = "please enter a number between 1-5";
-    setTimeout(()=> warning.style.display = "none", 3000);
-    guess.value = "";
-}else if(guess.value == randomNum){
-    playCorrectSound()
-    display.innerHTML = "Correct!!!";
-    display.style.color = "green";
-    number.innerHTML = randomNum;
-    number.style.color = "green"
-    body.classList.remove("fail")
-    body.classList.remove("body")
-    body.classList.add("correct")
-    check.setAttribute("disabled", "true")
-    check.style.opacity = '0.6'
-    msg.innerHTML = "Play again!!"
-    between.innerHTML = "Play again!!"
-}else if(trials.innerHTML == 0){
-    playGameOverSound()
-    display.innerHTML = "Game Over!!!";
-    body.classList.remove("fail")
-    body.classList.remove("correct")
-    body.classList.add("body")
-    guess.value = ""
-    number.innerHTML = "?"
-    check.setAttribute("disabled", "true")
-    check.style.opacity = '0.6'
-    msg.innerHTML = "Play again!!"
-    between.innerHTML = "Play again!!"
-}else{
-    playWrongSound()
-    body.classList.remove("body")
-    body.classList.remove("correct")
-    body.classList.add("fail")
-    display.innerHTML = "Opps you're wrong!"
-    msg.innerHTML = "Continue playing"
+    // random number generator
+        let randomNum = Math.ceil(Math.random() * 5);
+    // For trials
+        trials.innerHTML--;
+        trials.innerHTML < 0 ? trials.innerHTML = 0 : trials.innerHTML
+    // Conditionals
+    if (guess.value == null || guess.value < 1 || guess.value > 5 || guess.value == ""){
+        playWrongSound()
+        warning.style.display = "block";
+        warning.innerHTML = "please enter a number between 1-5";
+        setTimeout(()=> warning.style.display = "none", 3000);
+        guess.value = "";
+    }else if(guess.value == randomNum){
+        playCorrectSound()
+        display.innerHTML = "Correct!!!";
+        display.style.color = "green";
+        number.innerHTML = randomNum;
+        number.style.color = "green"
+        body.classList.remove("fail")
+        body.classList.remove("body")
+        body.classList.add("correct")
+        check.setAttribute("disabled", "true")
+        check.style.opacity = '0.6'
+        msg.innerHTML = "Play again!!"
+        between.innerHTML = "Play again!!"
+    }else if(trials.innerHTML == 0){
+        playGameOverSound()
+        display.innerHTML = "Game Over!!!";
+        body.classList.remove("fail")
+        body.classList.remove("correct")
+        body.classList.add("body")
+        guess.value = ""
+        number.innerHTML = "?"
+        check.setAttribute("disabled", "true")
+        check.style.opacity = '0.6'
+        msg.innerHTML = "Play again!!"
+        between.innerHTML = "Play again!!"
+    }else{
+        playWrongSound()
+        body.classList.remove("body")
+        body.classList.remove("correct")
+        body.classList.add("fail")
+        display.innerHTML = "Opps you're wrong!"
+        msg.innerHTML = "Continue playing"
+    }
 }
-}
 
-// add event listeners
+// Event listeners
 check.addEventListener('click', (event) => {
     event.preventDefault();
     playGame();

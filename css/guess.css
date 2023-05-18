@@ -24,6 +24,7 @@ body{
     color: #eee;
     font-size: 1rem;
     position: relative;
+    height: 100vh;
 }
 header{
     display: flex;
@@ -31,7 +32,7 @@ header{
     justify-content: space-around;
     align-items: center;
     height: 50vh;
-    border-bottom: 5px solid #eee;
+    border-bottom: 5px solid #cea33749;
 }
 main{
     height: 45vh;
@@ -59,7 +60,6 @@ h1{
 .label-highscore{
     display: none;
 }
-
 .btn{
     width: 8rem;
     padding: 10px 15px;
@@ -68,10 +68,9 @@ h1{
     cursor: pointer;
     border: none;
     color: #eee;
+    letter-spacing: 2.5px;
+    font-weight: 600;
 }
-/* .again{
-    margin-top: 1rem;
-} */
 .between{
     color: #cea337d5;
 }
@@ -182,7 +181,26 @@ form{
         right: 3%;
     }
 }
-
+/* ipads */
+@media (min-width: 768px) and (max-width: 950px) {
+    main{
+        flex-direction: column;
+    }
+    .right, .left{
+        width: 100%;
+    }
+    .warning{
+        width: 80%;
+        text-align: center;
+        align-self: center;
+    }
+}
+@media (min-width: 950px){
+    /* main{
+        height: 65vh;
+    } */
+    
+}
 /* Animations */
 .number{
     animation: float 5s ease-in-out;
