@@ -8,15 +8,15 @@
     text-decoration: none;
 }
 .correct{
-    background-color: green;
+    background-color: #008000;
     background: url('../images/giphy.gif');
 }
 .fail{
-    background-color: red;
+    background-color: #ff0000c9;
     
 }
 .body{
-    background-color: #222;
+    background-color: #222222b1;
 }
 body{
     font-family: "Press start 2P";
@@ -64,7 +64,7 @@ h1{
     width: 8rem;
     padding: 10px 15px;
     border-radius: 10px;
-    background-color: cadetblue;
+    background-color: #5f9ea0;
     cursor: pointer;
     border: none;
     color: #eee;
@@ -97,7 +97,7 @@ h1{
     font-family: "Press start 2P";
 }
 .warning{
-    background-color: yellow;
+    background-color: #ffff00d2;
     color: red;
     padding: 10px;
     border-radius: 10px;
@@ -118,7 +118,7 @@ small{
 .btn-container{
     width:100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-self: center;
 }
 form{
@@ -135,7 +135,6 @@ form{
     width: 50px;
     height: 50px;
 }
-
 .mute img:nth-child(1){
     display: none;
     }
@@ -143,6 +142,22 @@ form{
     width: 45px;
     }
 
+/* small device */
+@media (max-width: 350px){
+    
+    header{
+        height: 65vh;
+    }
+    .mute{
+        width: 45px;
+        height: 45px;
+        position: fixed;
+        bottom: 3%;
+    }
+    .footer{
+        margin-top: 2rem;
+    }
+}
 @media (min-width: 650px){
     body{
         font-size: 2rem;
@@ -196,15 +211,20 @@ form{
     }
 }
 @media (min-width: 950px){
-    /* main{
-        height: 65vh;
-    } */
+    .warning{
+        width: 80%;
+        text-align: center;
+        align-self: center;
+    }
+    .left, .right{
+        height: 40vh;
+    }
     
 }
 /* Animations */
 .number{
     animation: float 5s ease-in-out;
-    animation-iteration-count: 10;
+    animation-iteration-count: infinite;
 }
 @keyframes float {
     0%{
